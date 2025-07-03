@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:xml/xml.dart' as xml;
 // lib/pages/pages.dart
 import 'package:flutter_application_1/pages/birey_detay_kayit_screen.dart';
+import'package:flutter_application_1/pages/pop_up_screen.dart';
 
 
 
@@ -282,8 +283,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Ana Sayfa'),
       ),
-      body: const Stack(
-        children: [],
+      body: Stack(
+        children: [StatsPopupWidget(),],
       ),
       drawer: Drawer(
         child: ListView(

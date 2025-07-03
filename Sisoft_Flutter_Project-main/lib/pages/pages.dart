@@ -3,6 +3,19 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import'package:flutter_application_1/pages/pop_up_screen.dart';
+
+
+
+
+
+
+
+
+
+
+
+
 
 class IndividualPage extends StatefulWidget {
   const IndividualPage({super.key});
@@ -24,6 +37,7 @@ class _IndividualPageState extends State<IndividualPage> {
     }
   }
 
+  // ... geri kalan build() kodun aynı şekilde kalacak
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
