@@ -5,6 +5,8 @@ import 'package:xml/xml.dart' as xml;
 // lib/pages/pages.dart
 import 'package:flutter_application_1/pages/birey_detay_kayit_screen.dart';
 import'package:flutter_application_1/pages/pop_up_screen.dart';
+import'package:flutter_application_1/pages/Protokol_defteri_screen.dart';
+import'package:flutter_application_1/pages/M_istatistik_screen.dart';
 
 
 
@@ -474,18 +476,47 @@ ExpansionTile(
                 ),
               ],
             ),
-            ListTile(
-              leading: const Icon(Icons.lightbulb),
-              title: const Text('Karar Destek'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DecisionSupportPage(),
-                  ),
-                );
-              },
-            ),
+ExpansionTile(
+  leading: const Icon(Icons.lightbulb),
+  title: const Text('Karar Destek'),
+  children: [
+    ListTile(
+      leading: const Icon(Icons.book),
+      title: const Text('Protokol Defteri'),
+      contentPadding: EdgeInsets.only(left: 72, right: 16),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HastaSorguEkrani(),
+          ),
+        );
+      },
+    ),
+    // M. İstatistik alt menüsü
+    ExpansionTile(
+      leading: const Icon(Icons.analytics),
+      title: const Text('M. İstatistik'),
+      tilePadding: EdgeInsets.only(left: 72, right: 16),
+      childrenPadding: EdgeInsets.only(left: 16),
+      children: [
+        ListTile(
+          leading: const Icon(Icons.medical_services),
+          title: const Text('Protokol'),
+          contentPadding: EdgeInsets.only(left: 108, right: 16),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MedicalRecordsScreen(),
+              ),
+            );
+          },
+        ),
+      ],
+    ),
+  ],
+),
             ExpansionTile(
               leading: const Icon(Icons.sms),
               title: const Text('SMS Bildirim'),
@@ -843,7 +874,8 @@ class _HastaEklePageState extends State<HastaEklePage> {
   final List<String> sgkOptions = ['SSK', 'Bağkur', 'Emekli Sandığı', 'Diğer'];
   final List<String> medeniHalOptions = ['Bekar', 'Evli', 'Boşanmış', 'Dul'];
   final List<String> cinsiyetOptions = ['Erkek', 'Kadın', 'Diğer'];
-  final List<String> kayitDurumuOptions = ['Aktif', 'Pasif', 'Dondurulmuş'];
+  final List<String> kayitDurumuOptions = ['Kesin Kayıtlı', 'Misafir Birey',
+   'Yabancı Birey','Vatansız','Başka Hekime Giden','Ölen Birey','Kimliksiz'];
   final List<String> oncelikDurumuOptions = ['Yok', 'Yüksek', 'Orta', 'Düşük'];
   final List<String> kanGrubuOptions = [
     'A+',
